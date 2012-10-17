@@ -24,6 +24,7 @@ public class PersonManager implements ManagerInterface<Person>{
 	PreparedStatement addPersonStatement;
 	PreparedStatement deletePersonStatement;
 	PreparedStatement getAllPersonsStatement;
+	PreparedStatement getPersonByIdStatement;
 	public PersonManager()
 	{
 		try {
@@ -54,7 +55,8 @@ public class PersonManager implements ManagerInterface<Person>{
 					.prepareStatement("DELETE From Person WHERE name=?");
 			getAllPersonsStatement = conn
 					.prepareStatement("SELECT * FROM Person");
-			
+			getPersonByIdStatement=conn
+					.prepareStatement("SELECT * FROM Person WHERE id=?");
 			
 		} catch (SQLException e) {
 			
@@ -65,7 +67,19 @@ public class PersonManager implements ManagerInterface<Person>{
 	
 	@Override
 	public Person get(int id) {
-		// TODO Auto-generated method stub
+		try {
+			getPersonByIdStatement.setInt(1, id);
+			ResultSet rs= getPersonByIdStatement.executeQuery();
+			while(rs.next())
+			{
+				return new Person(rs.getString("Name"),rs.getString("pesel"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 

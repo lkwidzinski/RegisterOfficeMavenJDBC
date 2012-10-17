@@ -21,6 +21,8 @@ public class Main {
 			System.out.println(p.getName());
 		}
 		
+		System.out.println("Osoba o id 4:"+mgr.get(4).getName());
+		
 	}
 
 }
