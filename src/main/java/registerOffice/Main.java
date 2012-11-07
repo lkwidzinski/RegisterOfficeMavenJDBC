@@ -20,10 +20,14 @@ public class Main {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		session.beginTransaction();
+		
+		//
 		Car c = new PersonCar("BMW","GDA12345");
 		Person adam = new Person("Adam","1234");
 		adam.getCars().add(c);
 		c.setOwner(adam);
+		//
+		
 		session.persist(adam);
 		
 		session.getTransaction().commit();

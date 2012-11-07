@@ -3,6 +3,7 @@ package registerOffice.businessObjects.persons;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,12 +14,18 @@ import javax.persistence.Transient;
 
 import registerOffice.businessObjects.cars.*;
 
+@Entity
+@Table(name="OSOBY")
 public class Person {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	
+	@Column(name="imie")
 	private String name;
 	
+	@OneToMany(mappedBy="owner", cascade=javax.persistence.CascadeType.PERSIST)
 	private List<Car> cars;
 	private String pesel;
 	

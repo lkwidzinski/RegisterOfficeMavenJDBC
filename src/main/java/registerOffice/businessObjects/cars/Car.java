@@ -8,9 +8,13 @@ import javax.persistence.OneToMany;
 
 import registerOffice.businessObjects.persons.Person;
 
+@Entity
 public abstract class Car implements CarInterface{
 
+	@Id
+	@GeneratedValue
 	protected int id;
+	@ManyToOne
 	protected Person owner;
 	
 	public void printData()
