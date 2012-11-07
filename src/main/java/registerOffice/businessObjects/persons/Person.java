@@ -3,11 +3,22 @@ package registerOffice.businessObjects.persons;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import registerOffice.businessObjects.cars.*;
 
 public class Person {
 
+	private int id;
+	
 	private String name;
+	
 	private List<Car> cars;
 	private String pesel;
 	
@@ -47,6 +58,14 @@ public class Person {
 
 	public void setPesel(String pesel) {
 		this.pesel = pesel;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

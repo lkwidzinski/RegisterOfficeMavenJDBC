@@ -1,5 +1,8 @@
 package registerOffice.businessObjects.cars;
 
+import javax.persistence.Entity;
+
+@Entity
 public class PersonCar extends Car{
 
 	//pole statyczne

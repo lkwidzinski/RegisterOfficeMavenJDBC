@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.048" errors="0" skipped="0" tests="1" name="pjwstk.registrationOffice.AppTest">
+<testsuite failures="0" time="0.124" errors="0" skipped="0" tests="1" name="pjwstk.registrationOffice.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/opt/devel/jdk1.6.0_35/jre/lib/i386"/>
@@ -24,7 +24,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/opt/devel/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf4077391644862256512.tmp"/>
+    <property name="classworlds.conf" value="/opt/devel/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf413166716369056084.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/opt/devel/jdk1.6.0_35/jre/lib/i386/client:/opt/devel/jdk1.6.0_35/jre/lib/i386:/opt/devel/jdk1.6.0_35/jre/../lib/i386:/opt/devel/jdk1.6.0_35/jre/lib/i386/client:/opt/devel/jdk1.6.0_35/jre/lib/i386::/usr/java/packages/lib/i386:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.003" classname="pjwstk.registrationOffice.AppTest" name="testApp"/>
+  <testcase time="0.005" classname="pjwstk.registrationOffice.AppTest" name="testApp"/>
 </testsuite>
