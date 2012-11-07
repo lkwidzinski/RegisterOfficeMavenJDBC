@@ -24,12 +24,16 @@ public class Main {
 		//
 		Car c = new PersonCar("BMW","GDA12345");
 		Person adam = new Person("Adam","1234");
+		Address a=new Address("sezamkowa","zamek",12);
 		adam.getCars().add(c);
+		adam.getAdres().add(a);
+		a.getMieszkaniec().add(adam);
 		c.setOwner(adam);
+		
 		//
 		
 		session.persist(adam);
-		
+		session.persist(a);
 		session.getTransaction().commit();
 		session.close();
 		//PersonManager mgr = new PersonManager();

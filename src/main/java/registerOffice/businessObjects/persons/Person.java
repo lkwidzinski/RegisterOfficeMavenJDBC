@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -28,6 +29,8 @@ public class Person {
 	@OneToMany(mappedBy="owner", cascade=javax.persistence.CascadeType.PERSIST)
 	private List<Car> cars;
 	private String pesel;
+	@ManyToMany(mappedBy="mieszkaniec")
+	private List<Address> adres=new ArrayList<Address>();
 	
 	public Person(String name, String pesel)
 	{
@@ -75,6 +78,12 @@ public class Person {
 		this.id = id;
 	}
 	
-	
+	public void setAdres(List<Address> adres){
+		this.adres=adres;
+		
+	}
+	public List<Address> getAdres(){
+		return adres;
+	}
 	
 }
