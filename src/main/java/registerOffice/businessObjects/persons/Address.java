@@ -5,8 +5,34 @@ import java.util.List;
 
 import javax.persistence.*;
 
+@NamedQueries({
+	@NamedQuery(
+			name="allAddresses.ById",
+			query="From Address a where a.id=:id"),
+	@NamedQuery(
+			name="allAddresses",
+			query="From Address a"),
+	@NamedQuery(
+			name="deleteAddress",
+			query="delete from Address a where a.id=:id")
+	
+		
+		
+		
+		
+})
+
+
+
+
+
 @Entity
 public class Address {
+	
+	public int getId() {
+		return id;
+	}
+
 	
 	@Id
 	@GeneratedValue

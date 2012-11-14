@@ -6,7 +6,26 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.*;
+
 import registerOffice.businessObjects.persons.Person;
+@NamedQueries({
+	@NamedQuery(
+		name="allCars.ById",
+		query="From Car c where c.id=:id "),
+	@NamedQuery(
+		name="allCars",
+		query="From Car c"),
+	@NamedQuery(
+			name="deleteCar",
+			query="delete from Car c where c.id=:id")
+	
+		
+		
+})
+
+
+
 
 @Entity
 public abstract class Car implements CarInterface{

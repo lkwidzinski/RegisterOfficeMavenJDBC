@@ -1,5 +1,7 @@
 package registerOffice;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -29,25 +31,30 @@ public class Main {
 		adam.getAdres().add(a);
 		a.getMieszkaniec().add(adam);
 		c.setOwner(adam);
-		
+		HCarManager hcmgr=new HCarManager(session);
+		HAddressManager admgr=new HAddressManager(session);
 		//
 		
 		session.persist(adam);
+		List<Person> persons=session.getNamedQuery("allPersons.ByName").setString("name", "Pawel").list();
+		
 		session.persist(a);
+		admgr.getAll();
+		//hcmgr.delete(c);
+		
 		session.getTransaction().commit();
 		session.close();
-		//PersonManager mgr = new PersonManager();
-		//mgr.save(new Person("Adam","1234"));
-		//mgr.save(new Person("Michal","1234"));
-		//mgr.save(new Person("Paweł","1234"));
+		/*PersonManager mgr = new PersonManager();
+		mgr.save(new Person("Adam","1234"));
+		mgr.save(new Person("Michal","1234"));
+		mgr.save(new Person("Paweł","1234"));
 		
-		//mgr.delete(new Person("Adam"));
-		//for(Person p: mgr.getAll())
-		//{
-		//	System.out.println(p.getName());
-		//}
-		
-		
+		mgr.delete(new Person("Adam"));
+		for(Person p: mgr.getAll())
+		{
+			System.out.println(p.getName());
+		}*/
+	
 		//System.out.println("Osoba o id 4:"+mgr.get(4).getName());
 		
 	}
